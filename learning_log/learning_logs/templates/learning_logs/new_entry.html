@@ -12,7 +12,6 @@
 <form action="{% url 'learning_logs:new_entry' topic.id %}" method="post" >
   {% csrf_token %}
   {{form.as_p}}
-    <input type="text" name="text">
   <button name="submit">add entry</button>
 </form>
 

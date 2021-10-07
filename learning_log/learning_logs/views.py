@@ -32,7 +32,7 @@ def new_topic(request):
         if form.is_valid():
             form.save()
             return redirect('learning_logs:topics')
-    content = {'from':form}
+    content = {'form':form}
     return render(request,'learning_logs/new_topic.html',content)
 
 def new_entry(request,topic_id):
@@ -49,5 +49,5 @@ def new_entry(request,topic_id):
             new_entry.topic=topic
             new_entry.save()
             return redirect('learning_logs:topic',topic_id=topic_id)
-    content = {'topic':topic,'from':form}
+    content = {'topic':topic,'form':form}
     return render(request,'learning_logs/new_entry.html',content)
